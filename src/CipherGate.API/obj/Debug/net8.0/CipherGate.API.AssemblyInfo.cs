@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CipherGate.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+460d8947298fc088ed8ff2c99a0860d58a6d3dc3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2be07d3b8dac993fac1de0d76166c2ef667d01a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CipherGate.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CipherGate.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
