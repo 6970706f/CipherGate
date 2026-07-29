@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "llvPxspjFPMhYKQFr1XzDrmpStminNCYEXIKXz39jz8AP7cCjrrwnlqoEam+T1ney5E5c9sOscK2zlqo8D50tw==",
+  "success": true,
+  "projectFilePath": "/home/lindomar/projects/CipherGate/src/CipherGate.Domain/CipherGate.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/lindomar/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.29/microsoft.aspnetcore.app.ref.8.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}
