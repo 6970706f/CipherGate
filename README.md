@@ -1,10 +1,10 @@
 # CipherGate
 
-CipherGate é uma aplicação web para gerenciamento de conexões SSH. O sistema permite cadastrar servidores, autenticar usuários e estabelecer sessões SSH diretamente pelo navegador utilizando SignalR como canal de comunicação em tempo real.
+CipherGate is a web application for SSH connection management. The system allows users to register servers, authenticate, and establish SSH sessions directly from the browser using SignalR as the real-time communication channel.
 
-A aplicação implementa autenticação baseada em JWT e gerenciamento de conexões SSH por usuário. Cada usuário pode cadastrar seus próprios servidores, iniciar sessões SSH diretamente pelo navegador e manter múltiplos terminais ativos simultaneamente. Todas as conexões e configurações são isoladas por usuário, impedindo o acesso a recursos pertencentes a outras contas.
+The application implements JWT-based authentication and per-user SSH connection management. Each user can register their own servers, start SSH sessions directly from the browser, and maintain multiple active terminal sessions simultaneously. All connections and configurations are isolated per user, preventing access to resources belonging to other accounts.
 
-A modelagem do sistema é composta por um Diagrama de Classes, responsável por representar a estrutura do domínio, e por um Modelo Entidade-Relacionamento, utilizado para definir a organização do banco de dados.
+The system design consists of a Class Diagram, which represents the domain structure, and an Entity-Relationship Diagram (ERD), which defines the database schema.
 
 <table align="center">
   <tr>
@@ -17,28 +17,28 @@ A modelagem do sistema é composta por um Diagrama de Classes, responsável por 
   </tr>
 </table>
 
-O backend foi desenvolvido em ASP.NET Core utilizando C#. O acesso aos dados é realizado com Entity Framework Core, a comunicação em tempo real utiliza SignalR e as conexões SSH são estabelecidas através da biblioteca SSH.NET. A persistência é feita em MariaDB e toda a infraestrutura é executada em containers Docker orquestrados pelo Docker Compose.
+The backend was developed with ASP.NET Core using C#. Data access is handled through Entity Framework Core, real-time communication is powered by SignalR, and SSH connections are established using the SSH.NET library. Data persistence is provided by MariaDB, and the entire infrastructure runs in Docker containers orchestrated with Docker Compose.
 
-Para executar o projeto:
+To run the project:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/CipherGate.git
+git clone https://github.com/YOUR_USERNAME/CipherGate.git
 cd CipherGate
 docker compose up -d
 ```
 
-Após a inicialização, a aplicação estará disponível em:
+Once the application has started, it will be available at:
 
 ```text
 http://localhost:8080
 ```
 
-Para encerrar os serviços:
+To stop the services:
 
 ```bash
 docker compose down
 ```
 
-O projeto foi desenvolvido com o objetivo de aprofundar conhecimentos em Clean Architecture, Domain-Driven Design (DDD), ASP.NET Core, Entity Framework Core, SignalR, protocolo SSH, Docker, MariaDB e arquitetura de software.
+This project was developed to deepen knowledge of Clean Architecture, Domain-Driven Design (DDD), ASP.NET Core, Entity Framework Core, SignalR, the SSH protocol, Docker, MariaDB, and software architecture.
 
-O projeto encontra-se em desenvolvimento.
+The project is currently under development.
