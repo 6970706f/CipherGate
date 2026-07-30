@@ -9,7 +9,7 @@ The system design consists of a Class Diagram, which represents the domain struc
 <table align="center">
   <tr>
     <td align="center">
-      <img src="docs/images/database-diagram.png" width="470">
+      <img src="docs/images/database-diagram.png">
     </td>
   </tr>
 </table>
