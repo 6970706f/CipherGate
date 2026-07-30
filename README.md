@@ -9,9 +9,6 @@ The system design consists of a Class Diagram, which represents the domain struc
 <table align="center">
   <tr>
     <td align="center">
-      <img src="docs/images/class-diagram.png" width="700">
-    </td>
-    <td align="center">
       <img src="docs/images/database-diagram.png" width="470">
     </td>
   </tr>
