@@ -36,7 +36,7 @@ public class SshServer
 
     public void ChangeName(string name)
     {
-        if (!string.IsNullOrWhiteSpace(name))
+        if (string.IsNullOrWhiteSpace(name))
             throw new Exception();
         
         Name = name;
@@ -45,7 +45,7 @@ public class SshServer
 
     public void ChangeHost(string host)
     {
-        if (!string.IsNullOrWhiteSpace(host))
+        if (string.IsNullOrWhiteSpace(host))
             throw new Exception();
         
         Host = host;
@@ -63,7 +63,7 @@ public class SshServer
 
     public void ChangeUsername(string username)
     {
-        if (!string.IsNullOrWhiteSpace(username))
+        if (string.IsNullOrWhiteSpace(username))
             throw new Exception();
         
         Username = username;
@@ -72,7 +72,7 @@ public class SshServer
 
     public void ChangePrivateKey(string privateKey)
     {
-        if (!string.IsNullOrWhiteSpace(privateKey))
+        if (string.IsNullOrWhiteSpace(privateKey))
             throw new Exception();
         
         PrivateKey = privateKey;
@@ -81,11 +81,11 @@ public class SshServer
 
     private void Verify(string name, string host, int port, string username)
     {
-        if (!string.IsNullOrWhiteSpace(name))
+        if (string.IsNullOrWhiteSpace(name))
             throw new Exception();
-        if (!string.IsNullOrWhiteSpace(host))
+        if (string.IsNullOrWhiteSpace(host))
             throw new Exception();
-        if (!string.IsNullOrWhiteSpace(username))
+        if (string.IsNullOrWhiteSpace(username))
             throw new Exception();
         if (port <= 0)
             throw new Exception();

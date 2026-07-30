@@ -36,7 +36,7 @@ public class User
 
     public void ChangeName(string name)
     {
-        if (!string.IsNullOrWhiteSpace(name))
+        if (string.IsNullOrWhiteSpace(name))
             throw new Exception();
         
         Name = name;
@@ -45,7 +45,7 @@ public class User
 
     public void ChangeEmail(string email)
     {
-        if (!string.IsNullOrWhiteSpace(email))
+        if (string.IsNullOrWhiteSpace(email))
             throw new Exception();
         
         Email = email;
@@ -54,7 +54,7 @@ public class User
 
     public void ChangePassword(string passwordHash)
     {
-        if (!string.IsNullOrWhiteSpace(passwordHash))
+        if (string.IsNullOrWhiteSpace(passwordHash))
             throw new Exception();
         
         PasswordHash = passwordHash;
@@ -73,11 +73,11 @@ public class User
 
     private void Verify(string name, string email, string passwordHash)
     {
-        if (!string.IsNullOrWhiteSpace(name))
+        if (string.IsNullOrWhiteSpace(name))
             throw new Exception();
-        if (!string.IsNullOrWhiteSpace(email))
+        if (string.IsNullOrWhiteSpace(email))
             throw new Exception();
-        if (!string.IsNullOrWhiteSpace(passwordHash))
+        if (string.IsNullOrWhiteSpace(passwordHash))
             throw new Exception();
     }
 }
