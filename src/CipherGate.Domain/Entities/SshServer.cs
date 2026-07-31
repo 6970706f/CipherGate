@@ -20,7 +20,7 @@ public class SshServer
         ModifiedAt = DateTime.UtcNow;
     }
 
-    public Guid Id { get; private set; } = new Guid();
+    public Guid Id { get; private set; } = Guid.NewGuid();
     public Guid UserId { get; private set; }
     
     public User User { get; private set; } = null!;

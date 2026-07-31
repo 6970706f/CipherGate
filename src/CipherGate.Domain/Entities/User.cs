@@ -19,9 +19,9 @@ public class User
         ModifiedAt = DateTime.UtcNow;
     }
 
-    private List<SshServer> Servers = [];
+    private readonly List<SshServer> _servers = [];
 
-    public Guid Id { get; private set; } = new Guid();
+    public Guid Id { get; private set; } = Guid.NewGuid();
 
     public string Name { get; private set; } = null!;
     public string Email { get; private set; } = null!;
@@ -31,8 +31,8 @@ public class User
     public DateTime CreatedAt { get; private set; }
     public DateTime ModifiedAt { get; private set; }
 
-    public IReadOnlyCollection<SshServer> ServersReadOnly =>
-        Servers.AsReadOnly();
+    public IReadOnlyCollection<SshServer> Servers =>
+        _servers.AsReadOnly();
 
     public void ChangeName(string name)
     {
@@ -63,12 +63,12 @@ public class User
 
     public void AddServer(SshServer server)
     {
-        Servers.Add(server);
+        _servers.Add(server);
     }
 
     public void RemoveServer(SshServer server)
     {
-        Servers.Remove(server);
+        _servers.Remove(server);
     }
 
     private void Verify(string name, string email, string passwordHash)
