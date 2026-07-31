@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CipherGate.Domain\CipherGate.Domain.csproj" />
+    <ProjectReference Include="..\CipherGate.Application\CipherGate.Application.csproj" />
   </ItemGroup>
 
 </Project>
