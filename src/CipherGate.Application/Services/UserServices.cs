@@ -10,7 +10,7 @@ public class UserService(
     IUserRepository userRepository
 ) : IUserService
 {
-    public async Task CreateAsync(UserCreateRequest request)
+    public async Task<UserResponse> CreateAsync(UserCreateRequest request)
     {
         var user = new User(
             request.Name,
@@ -20,6 +20,8 @@ public class UserService(
 
         await userRepository.CreateAsync(user);
         await userRepository.SaveChangesAsync();
+
+        return ToDTO(user);
     }
 
     public async Task<UserResponse> GetByIdAsync(Guid id)
@@ -42,7 +44,7 @@ public class UserService(
         await userRepository.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(Guid id, UserUpdateRequest request)
+    public async Task<UserResponse> UpdateAsync(Guid id, UserUpdateRequest request)
     {
         var user = await GetOrNotFoundAsync(id);
 
@@ -52,6 +54,8 @@ public class UserService(
         user.ChangeRole(request.Role);
 
         await userRepository.SaveChangesAsync();
+
+        return ToDTO(user);
     }
 
     private async Task<User> GetOrNotFoundAsync(Guid id)

@@ -5,7 +5,7 @@ namespace CipherGate.Application.Interfaces.Services;
 
 public interface IUserService
 {
-    public Task CreateAsync(UserCreateRequest request);
+    public Task<UserResponse> CreateAsync(UserCreateRequest request);
 
     public Task<UserResponse> GetByIdAsync(Guid id);
 
@@ -13,5 +13,5 @@ public interface IUserService
 
     public Task DeleteAsync(Guid id);
 
-    public Task UpdateAsync(Guid id, UserUpdateRequest request);
+    public Task<UserResponse> UpdateAsync(Guid id, UserUpdateRequest request);
 }
