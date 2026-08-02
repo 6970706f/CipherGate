@@ -61,6 +61,12 @@ public class User
         ModifiedAt = DateTime.UtcNow;
     }
 
+    public void ChangeRole(UserRole role)
+    {
+        Role = role;
+        ModifiedAt = DateTime.UtcNow;
+    }
+
     public void AddServer(SshServer server)
     {
         _servers.Add(server);

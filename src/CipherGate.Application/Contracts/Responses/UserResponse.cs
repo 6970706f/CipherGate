@@ -4,8 +4,8 @@ namespace CipherGate.Application.Contracts.Responses;
 
 public class UserResponse
 {
-    public Guid Id { get; init; }
-    public required string Name { get; init; }
-    public required string Email { get; init; }
-    public UserRole Role { get; init; }
+    public Guid Id { get; set; }
+    public required string Name { get; set; }
+    public required string Email { get; set; }
+    public UserRole Role { get; set; }
 }

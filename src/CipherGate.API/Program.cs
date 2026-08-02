@@ -1,4 +1,8 @@
+using CipherGate.Application.Interfaces.Repositories;
+using CipherGate.Application.Interfaces.Services;
+using CipherGate.Application.Services;
 using CipherGate.Infrastructure.Contexts;
+using CipherGate.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 string? connectionString = builder.Configuration["ConnectionString:DefaultConnection"]
     ?? throw new Exception("connections string error");
