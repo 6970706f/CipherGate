@@ -6,11 +6,11 @@ using CipherGate.Domain.Entities;
 
 namespace CipherGate.Application.Services;
 
-public sealed class UserService(
+public sealed class MeService(
     IUserRepository userRepository
-) : IUserService
+) : IMeService
 {
-    public async Task<UserResponse> CreateAsync(UserCreateRequest request)
+    public async Task<MeResponse> CreateAsync(MeCreateRequest request)
     {
         var user = new User(
             request.Name,
@@ -18,18 +18,19 @@ public sealed class UserService(
             request.Password
         );
 
-        await userRepository.CreateAsync(user);
         await userRepository.SaveChangesAsync();
 
         return ToDTO(user);
     }
 
-    public async Task<UserResponse> GetByIdAsync(Guid id)
+    public async Task<MeResponse> GetByIdAsync(Guid id)
     {
-        return ToDTO(await GetOrNotFoundAsync(id));
+        var user = await GetOrNotFoundAsync(id);
+
+        return ToDTO(user);
     }
 
-    public async Task<IEnumerable<UserResponse>> GetAsync()
+    public async Task<IEnumerable<MeResponse>> GetAsync()
     {
         var users = await userRepository.GetAsync();
 
@@ -44,17 +45,14 @@ public sealed class UserService(
         await userRepository.SaveChangesAsync();
     }
 
-    public async Task<UserResponse> UpdateAsync(Guid id, UserUpdateRequest request)
+    public async Task<MeResponse> UpdateAsync(Guid id, MeUpdateRequest request)
     {
         var user = await GetOrNotFoundAsync(id);
 
         user.ChangeName(request.Name);
-        user.ChangeEmail(request.Email);
-        user.ChangePassword(request.Password);
-        user.ChangeRole(request.Role);
 
         await userRepository.SaveChangesAsync();
-
+    
         return ToDTO(user);
     }
 
@@ -66,14 +64,16 @@ public sealed class UserService(
         return user;
     }
 
-    private UserResponse ToDTO(User user)
+    private MeResponse ToDTO(User user)
     {
-        return new UserResponse
+        return new MeResponse
         {
             Id = user.Id,
             Name = user.Name,
             Email = user.Email,
-            Role = user.Role
+            Role = user.Role,
+            CreatedAt = user.CreatedAt,
+            ModifiedAt = user.ModifiedAt
         };
     }
 }

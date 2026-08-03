@@ -6,7 +6,7 @@ using CipherGate.Domain.Entities;
 
 namespace CipherGate.Application.Services;
 
-public class SshServerService(
+public sealed class SshServerService(
     ISshServerRepository serverRepository
 ) : ISshServerService
 {

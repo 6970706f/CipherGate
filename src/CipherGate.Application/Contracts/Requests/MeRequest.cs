@@ -1,0 +1,13 @@
+namespace CipherGate.Application.Contracts.Requests;
+
+public class MeCreateRequest
+{
+    public required string Name { get; init; }
+    public required string Email { get; init; }
+    public required string Password { get; init; }
+}
+
+public class MeUpdateRequest
+{
+    public required string Name { get; init; }
+}

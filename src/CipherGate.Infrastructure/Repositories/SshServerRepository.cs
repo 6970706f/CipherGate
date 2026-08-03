@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CipherGate.Infrastructure.Repositories;
 
-public class SshServerRepository(
+public sealed class SshServerRepository(
     AppDbContext context
 ) : ISshServerRepository
 {
