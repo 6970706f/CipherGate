@@ -5,7 +5,6 @@ public class SshServerResponse
     public Guid Id { get; init; }
     public Guid UserId { get; init; }
 
-    public required string UserName { get; init; }
     public required string Name { get; init; }
     public required string Host { get; init; }
     public int Port { get; init; }

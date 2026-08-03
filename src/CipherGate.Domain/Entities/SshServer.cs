@@ -70,11 +70,8 @@ public class SshServer
         ModifiedAt = DateTime.UtcNow;
     }
 
-    public void ChangePrivateKey(string privateKey)
+    public void ChangePrivateKey(string? privateKey)
     {
-        if (string.IsNullOrWhiteSpace(privateKey))
-            throw new Exception();
-        
         PrivateKey = privateKey;
         ModifiedAt = DateTime.UtcNow;
     }
