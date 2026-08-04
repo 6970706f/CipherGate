@@ -14,6 +14,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<ISshServerService, SshServerService>();
+builder.Services.AddScoped<ISshServerRepository, SshServerRepository>();
+
+builder.Services.AddScoped<IMeService, MeService>();
+
 string? connectionString = builder.Configuration["ConnectionString:DefaultConnection"]
     ?? throw new Exception("connections string error");
 builder.Services.AddDbContext<AppDbContext>(options =>
